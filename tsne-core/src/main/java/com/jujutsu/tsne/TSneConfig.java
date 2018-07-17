@@ -10,6 +10,7 @@ public class TSneConfig implements TSneConfiguration {
 	protected double theta;
 	protected boolean silent;
 	protected boolean print_error;
+	protected int max_threads = Integer.MAX_VALUE;
 
 	public TSneConfig(double[][] xin, int outputDims, int initial_dims, double perplexity, int max_iter,
 			boolean use_pca, double theta, boolean silent, boolean print_error) {
@@ -177,6 +178,14 @@ public class TSneConfig implements TSneConfiguration {
 	public int getNrRows() {
 		return xin.length;
 	}
-	
-	
+
+	@Override
+	public void setMaxThreads(int max) {
+		this.max_threads = max;
+	}
+
+	@Override
+	public int getMaxThreads() {
+		return max_threads;
+	}
 }

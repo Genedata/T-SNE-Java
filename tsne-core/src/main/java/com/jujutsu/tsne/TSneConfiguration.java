@@ -41,4 +41,8 @@ public interface TSneConfiguration {
 	int getXStartDim();
 
 	int getNrRows();
+
+	void setMaxThreads(int max);
+
+	int getMaxThreads();
 }
